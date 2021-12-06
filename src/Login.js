@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 const Login = (props) => {
     const {
@@ -12,7 +12,17 @@ const Login = (props) => {
         setHasAccount,
         emailError,
         passwordError,
+        toggle
     } = props;
+    console.log(hasAccount);
+
+    const sendmessage = () => {
+      
+        console.log();
+        hasAccount ? setHasAccount(false) : setHasAccount(true)
+
+        
+    }
 
     return (
         <div className="login">
@@ -38,20 +48,23 @@ const Login = (props) => {
 
 			
 
-
+         
 
 				{hasAccount ? 
-					<div>
+					<>
 					<button onClick={handleLogin}> Sign in</button>
-					<p>Don't have an account ? <span onClick={() => setHasAccount(!setHasAccount)}>Sign up</span></p>
-					</div>
+					{/* <p onClick={() => setHasAccount(!setHasAccount)}>Don't have an account ? <span >Sign up</span></p> */}
+					<button onClick={sendmessage}> Don't have an account ? <span >Sign up</span></button>
+
+					</>
 				 : 
-					<div>
+					<>
 					<button onClick={handleSignup}> Sign up</button>
-					<p> Have an account ? <span onClick={() => setHasAccount(!setHasAccount)}>Sign in</span></p>
-					</div>
+					<button onClick={sendmessage}> Have an account ? <span >Sign in</span></button>
+					</>
 				
 			}
+
 
 				</div>
             </div>

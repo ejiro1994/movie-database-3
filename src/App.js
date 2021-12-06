@@ -20,6 +20,7 @@ const App = () => {
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const [hasAccount, setHasAccount] = useState(false);
+    const [toggle, setToggle] = useState(false)
 
 	const clearInputs = () => {
 		setEmail('')
@@ -31,6 +32,9 @@ const App = () => {
 		setPasswordError('')
 	}
 
+            const toggler = () => {
+                toggle ? setToggle(false) : setToggle(true)
+            }
 
 
 
@@ -71,6 +75,7 @@ const App = () => {
 
     const handleLogout = () => {
         fire.auth().signOut();
+        console.log('logout now');
     };
 
     const authListener = () => {
@@ -107,6 +112,7 @@ const App = () => {
             setHasAccount={setHasAccount}
             emailError={emailError}
             passwordError={passwordError}
+            toggler={toggler}
         />
         )}
 		
@@ -119,9 +125,4 @@ const App = () => {
 };
 
 export default App;
-
-/*
-check if state is loading, if equal to false then enter second if conditional where you ask if level is equal to 0 or 1 etc
-exit initial if statement to an else block which contains the return statement with loader in
-*/
 
