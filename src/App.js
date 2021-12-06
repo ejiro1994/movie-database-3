@@ -114,6 +114,7 @@ const App = () => {
             emailError={emailError}
             passwordError={passwordError}
             toggler={toggler}
+            user={user}
         />
         )}
 		

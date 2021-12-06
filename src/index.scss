@@ -38,10 +38,13 @@ body {
 .login {
     color: #fff;
     height: 100vh;
+        background: url('./assets/svgs/movies2.png')  no-repeat fixed center;
+        background-blend-mode:multiply ;
+        background-size: cover;
     .loginContainer {
         width: 30vw;
         margin: 0 auto; 
-        padding-top: 200px;
+        padding-top: 70px;
         text-transform: uppercase;
         display: flex;
         flex-direction:column;
@@ -72,4 +75,38 @@ body {
     }
 }
 
+.hero {
+.logout {
+    color: #fff;
+height: 50px;
+background:#040a10;
 
+width: 100vw;
+align-items: center;
+  justify-content: center;
+
+display: flex;
+justify-content: space-between;
+margin: auto;
+
+button {
+    all: unset;
+    padding: .5em 2em;
+    margin: .5em 2em;
+    letter-spacing: .2em;
+    cursor: pointer;
+    background: linear-gradient(to top, rgba(0, 82, 145, 0.427), rgba(7, 255, 57, 0.756));
+    border-radius: 50px;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+}
+
+}
+
+
+.userLoginTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    line-height: 2.3rem;
+}

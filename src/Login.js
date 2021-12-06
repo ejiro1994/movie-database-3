@@ -14,7 +14,8 @@ const Login = (props) => {
         emailError,
         passwordError,
         handleLogout,
-        toggle
+        toggle,
+        user
     } = props;
     console.log(hasAccount);
 
@@ -30,6 +31,8 @@ const Login = (props) => {
         <div className="login">
             <Header />
             <div className="loginContainer">
+            <h1 className='userLoginTitle'>Movie database app user Login</h1>
+
                 <label>Username</label>
                 <input
                     type="text"

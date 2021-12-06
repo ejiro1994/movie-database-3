@@ -1,7 +1,7 @@
 import React from "react"
 import Homepage from "./Homepage"
 import fire from "./fire"
-const Hero = (handleLogout, handleLogin) => {
+const Hero = (handleLogout, handleLogin, user) => {
 
 	const logout = () => {
 		        fire.auth().signOut();
@@ -9,10 +9,11 @@ const Hero = (handleLogout, handleLogin) => {
 	}
 	return (
 		<div className='hero'>
+
+			<nav className='logout'>
+				<h2>welcome {user}</h2>               
 				<button onClick={logout}>Logout</button>
 
-			<nav>
-				<h2>welcome</h2>
 			</nav>
 			<Homepage />
 		</div>
