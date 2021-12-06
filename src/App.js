@@ -74,8 +74,9 @@ const App = () => {
     };
 
     const handleLogout = () => {
-        fire.auth().signOut();
-        console.log('logout now');
+
+        // fire.auth().signOut();
+        console.log('hellooooo');
     };
 
     const authListener = () => {

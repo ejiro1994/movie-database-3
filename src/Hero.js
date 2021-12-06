@@ -1,11 +1,18 @@
 import React from "react"
 import Homepage from "./Homepage"
-const Hero = (handleLogout) => {
+import fire from "./fire"
+const Hero = (handleLogout, handleLogin) => {
+
+	const logout = () => {
+		        fire.auth().signOut();
+
+	}
 	return (
 		<div className='hero'>
+				<button onClick={logout}>Logout</button>
+
 			<nav>
 				<h2>welcome</h2>
-				<button onClick={handleLogout}>Logout</button>
 			</nav>
 			<Homepage />
 		</div>

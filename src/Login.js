@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Header from "./components/header/Header";
 
 const Login = (props) => {
     const {
@@ -12,11 +13,12 @@ const Login = (props) => {
         setHasAccount,
         emailError,
         passwordError,
+        handleLogout,
         toggle
     } = props;
     console.log(hasAccount);
 
-    const sendmessage = () => {
+    const toggleInputs = () => {
       
         console.log();
         hasAccount ? setHasAccount(false) : setHasAccount(true)
@@ -26,6 +28,7 @@ const Login = (props) => {
 
     return (
         <div className="login">
+            <Header />
             <div className="loginContainer">
                 <label>Username</label>
                 <input
@@ -51,17 +54,16 @@ const Login = (props) => {
          
 
 				{hasAccount ? 
-					<>
+					<><div>
 					<button onClick={handleLogin}> Sign in</button>
 					{/* <p onClick={() => setHasAccount(!setHasAccount)}>Don't have an account ? <span >Sign up</span></p> */}
-					<button onClick={sendmessage}> Don't have an account ? <span >Sign up</span></button>
-
-					</>
+					<button onClick={toggleInputs}> Don't have an account ? <span >Sign up</span></button>
+					</div></>
 				 : 
-					<>
+					<><div>
 					<button onClick={handleSignup}> Sign up</button>
-					<button onClick={sendmessage}> Have an account ? <span >Sign in</span></button>
-					</>
+					<button onClick={toggleInputs}> Have an account ? <span >Sign in</span></button>
+					</div></>
 				
 			}
 
